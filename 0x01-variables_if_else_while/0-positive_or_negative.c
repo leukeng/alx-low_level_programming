@@ -1,27 +1,87 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+include <stdio.h>
+
+#include <unistd.h>
+
 /**
- * main - entry point
- * Description: prints  if a number is positive or negative.
- * Return: 0
- */
+ *
+ *  * main - Entry point
+ *
+ *   * Description: prints all possible combination of 2-digit numbers
+ *
+ *    * Return: Always 0 (success)
+ *
+ *     */
+
 int main(void)
+
 {
-   int n;
-   srand(time(0));
-   n = rand() - RAND_MAX / 2;
-   if (n > 0)
-   {
-         printf("%d is positive\n", n);
-   }
-   else if (n == 0)
-   {
-	   printf("%d is zero\n", n);
-}
-   	else if (n < 0)
-	{
-	printf("%d is negative\n", n);
-	}
-	return (0);
+
+		int c, i, k, j;
+
+
+
+			for (c = 48; c <= 57; c++)
+
+					{
+
+								for (i = 48; i <= 57; i++)
+
+											{
+
+															for (k = 48; k <= 57; k++)
+
+																			{
+
+																								for (j = 48; j <= 57; j++)
+
+																													{
+
+																																		if (((k + j) > (c + i) &&  k >= c) || c < k)
+
+																																							{
+
+																																													putchar(c);
+
+																																																		putchar(i);
+
+																																																							putchar(' ');
+
+																																																												putchar(k);
+
+																																																																	putchar(j);
+
+
+
+																																																																						if (c + i + k + j == 227 && c == 57)
+
+																																																																												{
+
+																																																																																		break;
+
+																																																																																							}
+
+																																																																											else
+
+																																																																																	{
+
+																																																																																							putchar(',');
+
+																																																																																												putchar(' ');
+
+																																																																																																	}
+
+																																																																															}
+
+																																						}
+
+																											}
+
+																	}
+
+									}
+
+				putchar('\n');
+
+					return (0);
+
 }
