@@ -1,34 +1,42 @@
+#include <stdio.h>
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-
-int _putchar(char c);
 
 /**
- * print_number - prints a number
- * @n: params an integer
- * Return: returns nothing
+* print_number - Prints a number
+* @n: The number t0 print
+*/
+
+ * print_number - Prints an integer.
+ * @n: The integer to prints.
+ *
+ * Return: Nothing!
  */
 void print_number(int n)
 {
+	unsigned int num = n;
+	unsigned int k = n;
 
-	unsigned int n1 = 0;
-
-	if  (n < 0)
+	if (n < 0)
 	{
-		n1 = -n;
+		putchar('-');
+		num = -num;
+	}
+	if (num > 9)
+	{
+		print_number(num / 10);
+		n *= -1;
+		k = n;
 		_putchar('-');
 	}
+	putchar(num % 10 + '0');
 
-	else
-	{
-		n1 = n;
-	}
+	k /= 10;
 
-	if (n1 / 10)
-	{
-		print_number(n1 / 10);
-	}
+	if (k != 0)
+		print_number(k);
 
-	_putchar((n1 % 10) + '0');
+	_putchar((unsigned int) n % 10 + '0');
+
 }
+0 comments on commit 4ff5e87
