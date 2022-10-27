@@ -1,23 +1,33 @@
 #include <stdio.h>
+
 /**
-* main - a program to solve the 'FizzBuzz' test
-* Return: returns 0
-*/
+ * main - prints Buzz each numbers of 3 and 5.
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int i;
-	for (i = 1; i <= 100; i++)
+	int n;
+
+	n = 1;
+	printf("%d", n);
+	for (n = 2; n <= 100; n++)
 	{
-		if ((i % 3) == 0 && (i % 5) != 0)
-			printf("Fizz ");
-		else if ((i % 5) == 0 && (i % 3) != 0 && i != 100)
-			printf("Buzz ");
-		else if ((i % 5) == 0 && (i % 3) != 0 && i == 100)
-			printf("Buzz");
-		else if ((i % 3) == 0 && (i % 5) == 0)
-			printf("FizzBuzz ");
+		if ((n % 3 == 0) && (n % 5 == 0))
+		{
+			printf(" FizzBuzz");
+		}
+		else if (n % 3 == 0)
+		{
+			printf(" Fizz");
+		}
+		else if (n % 5 == 0)
+		{
+			printf(" Buzz");
+		}
 		else
-			printf("%d ", i);
+		{
+			printf(" %d", n);
+		}
 	}
 	printf("\n");
 	return (0);
