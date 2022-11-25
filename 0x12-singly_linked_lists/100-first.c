@@ -1,29 +1,13 @@
-#include "lists.h"
+#include <stdio.h>
+
+void __attribute__((constructor)) hare(void);
+
 /**
- * add_node - adds a new node at the beginning
- * of a list_t list.
- * @head: head of the linked list.
- * @str: string to store in the list.
- * Return: address of the head.
+ * hare - Prints a string before the
+ * main function is executed.
  */
-
-list_t *add_node(list_t **head, const char *str)
+void hare(void)
 {
-	list_t *new_node;
-	size_t n;
-
-	new_node = malloc(sizeof(list_t));
-	if (new_node == NULL)
-		return (NULL);
-
-	new_node->str = strdup(str);
-
-	for (n = 0; str[n]; n++)
-		;
-
-	new_node->len = n;
-	new_node->next = *head;
-	*head = new_node;
-
-	return (*head);
+	printf("You're beat! and yet, you must allow,\n"
+			"I bore my house upon my back!\n");
 }
